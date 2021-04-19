@@ -1,7 +1,7 @@
 import torch.nn as nn
 
-data_path='/home/dhia/data'
-test_path='/home/dhia/test'
+data_path='/home/dhia/data/train'
+test_path='/home/dhia/data/test'
 IMG_SIZE = 224
 batch_size = 32
 
