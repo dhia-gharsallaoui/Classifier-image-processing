@@ -6,24 +6,24 @@ import matplotlib.pyplot as plt
 device=parameters.dev
 
 # Data load and prepare
-transform = transforms.Compose([transforms.RandomHorizontalFlip(),
+transform = transforms.Compose([transforms.RandomHorizontalFlip(),        # In this case i didn't use many transforms I keep 2 because they perform so well in this model 
                                 transforms.RandomRotation(0.2),
                                 transforms.ToTensor(),
-                                transforms.Resize((224,224))
+                                transforms.Resize((parameters.IMG_SIZE,parameters.IMG_SIZE))
                                ])
 
 dataset = torchvision.datasets.ImageFolder(root = parameters.data_path,
                                            transform = transform)
 print("No of Classes: ", len(dataset.classes))
 
-train, val = torch.utils.data.random_split(dataset, [70, 20])
+train, val = torch.utils.data.random_split(dataset, [70, 20])   # those values depend on the train data I put 70 and 20 because i got 90 train image 
 
 train_loader = torch.utils.data.DataLoader(dataset = train,
-                                           batch_size = 10,
+                                           batch_size = parameters.batch_size,
                                            shuffle = False)
 
 val_loader = torch.utils.data.DataLoader(dataset = val,
-                                         batch_size = 10,
+                                         batch_size = parameters.batch_size,
                                          shuffle = False)
 
 # end
@@ -148,7 +148,7 @@ print("No of Classes: ", len(testset.classes))
 
 
 test_loader = torch.utils.data.DataLoader(dataset = testset,
-                                           batch_size = 10,
+                                           batch_size = parameters.batch_size,
                                            shuffle = False)
 vgg.eval()
 with torch.no_grad():
