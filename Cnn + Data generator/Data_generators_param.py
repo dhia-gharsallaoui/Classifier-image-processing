@@ -26,8 +26,8 @@ test_datagenerator = ImageDataGenerator(rescale = 1.0/255,
 
 
 # Load Data Parameteres
-train_path='/home/dhia/data'
-test_path='/home/dhia/test'
+train_path='/home/dhia/data/tain'
+test_path='/home/dhia/data/test'
 targ_size=(120,120)
 batch_gen=10
 
