@@ -7,5 +7,5 @@ To Change Learning Parameters change in the Parameters.py
 
 ## CNN + Data Generator
 This Model is based on Tensorflow.  
-To Change Learning Parameters change in the Parameters.py  
+To Change Learning Parameters change in the Data_generators_param.py 
 ![Image of Accuracy CNN](https://github.com/dhia-gharsallaoui/Classifier-image-processing/blob/cf0085302f78fe6fb62d3680b51f8f196614b3cf/Figure_1%20cnn.png)
